@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use FFMpeg;
+use App\Log;
 
 class AudioController extends Controller
 {
@@ -34,6 +35,6 @@ class AudioController extends Controller
       $audio
         ->save(new FFMpeg\Format\Audio\Wav(), 'C:/xampp2/htdocs/basicwebsite/CONVERTED/'.$convName);
 
-      return redirect('/audio');
+      return redirect('/audio')->with('success', 'Conversion completed');
     }
 }

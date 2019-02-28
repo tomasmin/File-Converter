@@ -24,3 +24,7 @@ Route::get('/contact', function () {
 });
 
 Route::post('/audio/submit', 'AudioController@submit');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
