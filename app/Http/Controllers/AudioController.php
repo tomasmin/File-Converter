@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use FFMpeg;
 use App\Log;
+use Response;
 
 class AudioController extends Controller
 {
@@ -19,13 +20,15 @@ class AudioController extends Controller
       $extension = $_POST ['extension'];
       $info = pathinfo ( $name );
       $convName = "$name.$extension";
-      $finalPath = 'C:/xampp2/htdocs/basicwebsite/UPLOADS/'.$name;
+      $finalPath = storage_path().'/Uploaded//'.$name;
+      $uploadPath = storage_path().'/Uploaded//';
+      $convertedPath = storage_path().'/Converted//';
 
-      move_uploaded_file ( $temp, 'C:/xampp2/htdocs/basicwebsite/UPLOADS/'.$name);
+      move_uploaded_file ( $temp, $uploadPath.$name);
 
       $ffmpeg = FFMpeg\FFMpeg::create([
-            'ffmpeg.binaries'  => 'C:/ffmpeg-20190225-f948082-win64-static/bin/ffmpeg.exe',
-            'ffprobe.binaries' => 'C:/ffmpeg-20190225-f948082-win64-static/bin/ffprobe.exe',
+            'ffmpeg.binaries'  => 'C:/ffmpeg/bin/ffmpeg.exe',
+            'ffprobe.binaries' => 'C:/ffmpeg/bin/ffprobe.exe',
             'timeout'          => 3600,
             'ffmpeg.threads'   => 1,
         ]);
@@ -33,8 +36,10 @@ class AudioController extends Controller
       $audio = $ffmpeg->open($finalPath);
 
       $audio
-        ->save(new FFMpeg\Format\Audio\Wav(), 'C:/xampp2/htdocs/basicwebsite/CONVERTED/'.$convName);
+        ->save(new FFMpeg\Format\Audio\Wav(), $convertedPath.$convName);
 
       return redirect('/audio')->with('success', 'Conversion completed');
+      //return Response::download($convertedPath.$convName, $convName);
     }
+
 }
