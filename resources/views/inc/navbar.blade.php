@@ -1,4 +1,3 @@
-{{--
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="/">Audio/Video Converter</a>
@@ -22,9 +21,8 @@
     </div>
   </div>
 </nav>
---}}
 
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<!-- <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Audio/Video Converter') }}
@@ -33,16 +31,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            <!-- <ul class="navbar-nav mr-auto">
 
-            </ul>
+            </ul> -->
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <!-- <ul class="navbar-nav ml-auto"> -->
                 <!-- Authentication Links -->
-                @guest
+                <!-- @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
@@ -73,4 +71,4 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
