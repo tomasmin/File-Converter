@@ -14,7 +14,7 @@
           <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/audio">Audio</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/contact">Video</a>
+            <a class="dropdown-item" href="/video">Video</a>
           </div>
         </li>
       </ul>

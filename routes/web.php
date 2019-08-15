@@ -19,11 +19,13 @@ Route::get('/audio', function () {
     return view('audio');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/video', function () {
+    return view('video');
 });
 
 Route::post('/audio/submit', 'AudioController@submit');
+
+Route::post('/video/submit', 'VideoController@submit');
 
 Auth::routes();
 

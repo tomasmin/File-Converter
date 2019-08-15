@@ -7,12 +7,12 @@ use FFMpeg;
 use App\Log;
 use Response;
 
-class AudioController extends Controller
+class VideoController extends Controller
 {
     public function submit(Request $request)
     {
       $this->validate($request, [
-        'file' => 'required|mimetypes:audio/mpeg|max:2048',
+        'file' => 'required|mimetypes:video/mp4|max:2048',
       ]);
 
       $name = $_FILES ['file'] ['name'];
@@ -33,13 +33,12 @@ class AudioController extends Controller
             'ffmpeg.threads'   => 1,
         ]);
 
-      $audio = $ffmpeg->open($finalPath);
+      $video = $ffmpeg->open($finalPath);
 
-      $audio
-        ->save(new FFMpeg\Format\Audio\Wav(), $convertedPath.$convName);
+      $video->gif(FFMpeg\Coordinate\TimeCode::fromSeconds(2), new FFMpeg\Coordinate\Dimension(640, 480), 3)
+        ->save($convertedPath.$convName);
 
       //return redirect('/audio')->with('success', 'Conversion completed');
       return Response::download($convertedPath.$convName, $convName);
     }
-
 }
