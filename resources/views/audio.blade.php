@@ -14,7 +14,7 @@
   <div class="container text-center" id="dropBox">
     {{Form::file('file', ['id' => 'fileInput', 'onchange' => 'addFiles(event)'])}}
     <label for="fileInput" id="fileLabel" ondragover="overrideDefault(event);fileHover();" ondragenter="overrideDefault(event);fileHover();" ondragleave="overrideDefault(event);fileHoverEnd();" ondrop="overrideDefault(event);fileHoverEnd();dropFiles(event);">
-        <i class="fa fa-download fa-5x" style="color: limeGreen; padding: 8px"></i>
+        <i class="fa fa-download fa-5x" style="color: #2f352f; padding: 8px"></i>
         <br>
         <span class="lead text-black-50" id="fileLabelText">
           Choose a file or drag it here
@@ -25,7 +25,7 @@
   </div>
 
   <div class="form-group text-center">
-    <span class="lead text-black-50">Convert to:</span> {{Form::select('extension', array('wav' => 'wav'), null, ['style' => 'border-radius: 4px'])}}
+    <span class="lead" style="color: rgb(194, 213, 194, 0.5)">Convert to:</span> {{Form::select('extension', array('wav' => 'wav'), null, ['style' => 'border-radius: 4px; background-color: #c2d5c2;'])}}
   </div>
 
   <div class="text-center">

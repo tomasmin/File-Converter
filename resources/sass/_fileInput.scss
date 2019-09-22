@@ -4,8 +4,13 @@
   max-width: 700px;
 }
 
+#dropBox.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 #dropBox #fileLabel {
-  background-color: rgba(0, 255, 0, 0.5);
+  background-color: rgba(133, 172, 133, 0.5);
   display: block;
   padding: 16px;
   position: relative;
@@ -48,5 +53,5 @@
 }
 
 #dropBox.fileHover {
-  box-shadow: 0 0 16px limeGreen;
+  box-shadow: 0 0 16px #2f352f;
 }

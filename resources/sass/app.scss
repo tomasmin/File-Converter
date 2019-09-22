@@ -12,6 +12,31 @@
 @import 'fileInput';
 
 .navbar-laravel {
-  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  background: linear-gradient(to right, #000000, #5a788c);
+}
+
+.btn-primary {
+  color: #c2d5c2;
+  background: linear-gradient(to right, #000000, #5a788c);
+  border-color: #c2d5c2;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #486d8b;
+  border-color: #436682;
+}
+
+.text-white {
+  color: #c2d5c2 !important;
+}
+
+.alert-danger {
+  color: #000000;
+  background-color: #8a3d3b;
+  border-color: #796f6f;
 }

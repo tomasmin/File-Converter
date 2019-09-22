@@ -2,11 +2,16 @@
   <div class="container">
     <a class="navbar-brand" href="/">Audio/Video Converter</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+      
+      <div class="navbar-nav ml-auto">
+      <a class="nav-link" href="/audio">Convert Audio</a>
+      <a class="nav-link" href="/video">Convert Video</a>
+      </div>
+      <!-- <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Convert
@@ -17,7 +22,7 @@
             <a class="dropdown-item" href="/video">Video</a>
           </div>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </nav>
@@ -32,15 +37,15 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-            <!-- Left Side Of Navbar -->
-            <!-- <ul class="navbar-nav mr-auto">
+<!-- Left Side Of Navbar -->
+<!-- <ul class="navbar-nav mr-auto">
 
             </ul> -->
 
-            <!-- Right Side Of Navbar -->
-            <!-- <ul class="navbar-nav ml-auto"> -->
-                <!-- Authentication Links -->
-                <!-- @guest
+<!-- Right Side Of Navbar -->
+<!-- <ul class="navbar-nav ml-auto"> -->
+<!-- Authentication Links -->
+<!-- @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
