@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use FFMpeg;
 use App\Log;
 use Response;
+use Session;
 
 class AudioController extends Controller
 {
@@ -20,15 +21,15 @@ class AudioController extends Controller
       $extension = $_REQUEST ['extension'];
       $info = pathinfo ( $name );
       $convName = "$name.$extension";
-      $finalPath = storage_path().'/Uploaded//'.$name;
-      $uploadPath = storage_path().'/Uploaded//';
-      $convertedPath = storage_path().'/Converted//';
+      $finalPath = storage_path().'\Uploaded\\'.$name;
+      $uploadPath = storage_path().'\Uploaded\\';
+      $convertedPath = storage_path().'\Converted\\';
 
       move_uploaded_file ( $temp, $uploadPath.$name);
 
       $ffmpeg = FFMpeg\FFMpeg::create([
-            'ffmpeg.binaries'  => 'C:/ffmpeg/bin/ffmpeg.exe',
-            'ffprobe.binaries' => 'C:/ffmpeg/bin/ffprobe.exe',
+            'ffmpeg.binaries'  => storage_path().'/ffmpeg.exe',
+            'ffprobe.binaries' => storage_path().'./ffprobe.exe',
             'timeout'          => 3600,
             'ffmpeg.threads'   => 1,
         ]);
@@ -38,8 +39,9 @@ class AudioController extends Controller
       $audio
         ->save(new FFMpeg\Format\Audio\Wav(), $convertedPath.$convName);
 
-      //return redirect('/audio')->with('success', 'Conversion completed');
-      return Response::download($convertedPath.$convName, $convName);
+      Session::flash('download.in.the.next.request', $convertedPath.$convName);
+      return redirect('/audio')->with('success', 'Conversion completed. ');
+      //return Response::download($convertedPath.$convName, $convName);
     }
 
 }

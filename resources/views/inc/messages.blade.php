@@ -9,5 +9,8 @@
 @if(session('success'))
   <div class="alert alert-success" style="text-align: center">
     {{session('success')}}
+    @if(Session::has('download.in.the.next.request'))
+         <a href="{{ Session::get('download.in.the.next.request') }}" download>DOWNLOAD</a>
+    @endif
   </div>
 @endif
