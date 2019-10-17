@@ -40,8 +40,8 @@ class AudioController extends Controller
         ->save(new FFMpeg\Format\Audio\Wav(), $convertedPath.$convName);
 
       Session::flash('download.in.the.next.request', $convertedPath.$convName);
-      return redirect('/audio')->with('success', 'Conversion completed. ');
-      //return Response::download($convertedPath.$convName, $convName);
+      //return redirect('/audio')->with('success', 'Conversion completed. ');
+      return Response::download($convertedPath.$convName, $convName);
     }
 
 }

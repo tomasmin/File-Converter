@@ -40,7 +40,7 @@ class VideoController extends Controller
         ->save($convertedPath.$convName);
 
       Session::flash('download.in.the.next.request', $convertedPath.$convName);
-      return redirect('/video')->with('success', 'Conversion completed. ');
-      //return Response::download($convertedPath.$convName, $convName);
+      //return redirect('/video')->with('success', 'Conversion completed. ');
+      return Response::download($convertedPath.$convName, $convName);
     }
 }
